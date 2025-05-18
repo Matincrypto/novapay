@@ -1,34 +1,82 @@
-novapay-payment-gateway/
-├── novapay-payment-gateway.php   // فایل اصلی افزونه
-├── includes/
-│   ├── class-novapay-gateway.php // کلاس اصلی درگاه پرداخت
-│   ├── novapay-api.php         // توابع مربوط به ارتباط با API نواپی
-│   ├── novapay-settings.php    // تنظیمات افزونه
-│   └── novapay-callback.php    // صفحه بازگشت از نواپی
-├── css/
-│   └── style.css             // فایل CSS (در صورت نیاز)
-└── languages/
-    └── novapay-payment-gateway.pot // فایل ترجمه (در صورت نیاز)# novapay
+README for Novapay Project
 
+Project Title
 
-     این افزونه شامل چندین فایل است که هر کدام وظایف خاصی را بر عهده دارند:
+Novapay
+Description
 
-novapay-payment-gateway.php: این فایل اصلی افزونه است و اطلاعات افزونه را تعریف می‌کند و کلاس اصلی درگاه پرداخت را فراخوانی می‌کند.
-includes/class-novapay-gateway.php: این فایل شامل کلاس WC_Novapay_Gateway است که منطق اصلی درگاه پرداخت را پیاده‌سازی می‌کند. این شامل تنظیمات درگاه، ایجاد تراکنش و مدیریت پاسخ‌های بازگشت است.
-includes/novapay-api.php: این فایل شامل کلاس Novapay_API است که توابعی را برای برقراری ارتباط با API نواپی ارائه می‌دهد. این توابع درخواست‌ها را به API ارسال کرده و پاسخ‌ها را پردازش می‌کنند.
+Novapay is a software project designed to provide online payment services. It includes various features to facilitate financial transactions.
+Table of Contents
 
-includes/novapay-callback.php: این فایل مسئولیت مدیریت درخواست‌های بازگشت از نواپی و به‌روزرسانی وضعیت سفارش در ووکامرس را بر عهده دارد.
-چگونه آن را پیاده‌سازی کنیم؟
+Installation
+File Structure
+Usage
+Features
+Contributing
+License
+Contact
+Installation
 
-برای پیاده‌سازی این افزونه، مراحل زیر را دنبال کنید:
+Download the ZIP file
 
-ایجاد پوشه افزونه: یک پوشه به نام novapay-payment-gateway در دایرکتوری wp-content/plugins/ وردپرس خود ایجاد کنید.
-ایجاد فایل‌ها: فایل‌های PHP را با کدی که قبلاً نوشتیم در پوشه افزونه ایجاد کنید.
-فعال‌سازی افزونه: از طریق پنل مدیریت وردپرس، به بخش افزونه‌ها بروید و افزونه "Novapay Payment Gateway" را فعال کنید.
-تنظیمات درگاه: به تنظیمات ووکامرس بروید و در بخش پرداخت، درگاه "Novapay" را پیدا کنید. کلید API و سایر تنظیمات مورد نیاز را وارد کنید.
-گردش کار پرداخت:
+Download the project file from the following link: /novapay-main.zip
+Extract the ZIP file
 
-وقتی مشتری در فروشگاه شما خرید می‌کند و درگاه پرداخت نواپی را انتخاب می‌کند، تابع process_payment() در کلاس WC_Novapay_Gateway فراخوانی می‌شود.
+Extract the ZIP file to access the project contents.
+Install Dependencies
+
+Navigate to the project directory and install the necessary dependencies using:
+bash
+Run
+Copy code
+npm install
+Start the Server
+
+To start the local server, use the following command:
+bash
+Run
+Copy code
+npm start
+File Structure
+
+Below is a breakdown of the main files and directories in the Novapay project:
+
+/src
+
+Contains the source code for the application.
+/components
+Reusable UI components.
+/pages
+Different pages of the application.
+/services
+API service calls and business logic.
+/public
+
+Static files such as images and icons.
+/tests
+
+Contains unit and integration tests for the application.
+package.json
+
+Contains metadata about the project and its dependencies.
+README.md
+
+This file, providing an overview and instructions for the project.
+Usage
+
+After starting the server, you can access the application at http://localhost:3000. The interface allows users to perform various payment-related tasks.
+Features
+
+Online payment processing
+User account management
+Transaction reporting
+Responsive design for mobile and desktop
+Contributing
+
+Contributions are welcome! Please submit a pull request for any changes or improvements you would like to make.
+License
+
+This project is licensed under the MIT License..
 این تابع یک درخواست به API نواپی برای ایجاد تراکنش ارسال می‌کند و مشتری را به صفحه پرداخت نواپی هدایت می‌کند.
 پس از انجام پرداخت در صفحه نواپی، مشتری به سایت شما بازگردانده می‌شود و نواپی اطلاعات تراکنش را به فایل novapay-callback.php ارسال می‌کند.
 تابع novapay_process_callback() وضعیت تراکنش را از نواپی دریافت کرده و وضعیت سفارش مربوطه را در ووکامرس به‌روزرسانی می‌کند.
